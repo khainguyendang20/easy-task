@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
+import { data } from './dummy-data/user.json';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,9 @@ import { UserComponent } from './user/user.component';
 })
 export class AppComponent {
   title = 'angular-basic';
+  listUsers = data;
+
+  constructor() {
+    console.log(data);
+  }
 }
