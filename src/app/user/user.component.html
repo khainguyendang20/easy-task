@@ -1,0 +1,14 @@
+<div class="rounded-md shadow-[0_1px_6px_rgba(0,_0,_0,_0.1)] overflow-hidden">
+  <button
+    [class.active]="isActive"
+    class="flex items-center gap-2 px-2 py-[0.35rem] bg-[#433352] text-[#c3b3d1] cursor-pointer w-full min-w-[10rem]"
+    (click)="onSelectUser()"
+  >
+    <img
+      [src]="imgPath"
+      [alt]="data.name"
+      class="size-8 rounded-full object-contain shadow-[0_1px_8px_rgba(0,_0,_0,_0.3)]"
+    />
+    <span class="m-0 p-0 text-[0.8rem]">{{ data.name }}</span>
+  </button>
+</div>

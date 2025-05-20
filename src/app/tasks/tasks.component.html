@@ -1,0 +1,25 @@
+@if(isAddingNewTask) {
+<app-new-task (close)="onCloseNewTask()" [userId]="user!.id" />
+}
+
+<section class="rounded-lg bg-[#3a2c54]">
+  <header
+    class="flex items-center justify-between gap-4 mb-8 p-8 rounded-lg max-h-[60vh] bg-[#3a2c54] pb-0"
+  >
+    <app-heading>{{ user.name }}'s Tasks</app-heading>
+    <button class="text-black" (click)="onAddNewTask()">Add Task</button>
+  </header>
+  @if(tasksByUserId.length) {
+  <ul
+    class="space-y-4 p-0 flex flex-col gap-4 max-h-[50vh] overflow-auto px-4 pb-8"
+  >
+    @for(task of tasksByUserId; track task.id) {
+    <li>
+      <app-task [task]="task" />
+    </li>
+    }
+  </ul>
+  } @else {
+  <p class="italic text-center pb-10">No tasks found.</p>
+  }
+</section>
