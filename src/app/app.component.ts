@@ -8,7 +8,7 @@ import { User } from './user/user.model';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = 'angular-basic';
+  title = 'Easy Task';
   listUsers = data;
   activeUserId!: string;
 
