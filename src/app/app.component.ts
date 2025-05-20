@@ -10,7 +10,7 @@ import { User } from './user/user.model';
 export class AppComponent {
   title = 'angular-basic';
   listUsers = data;
-  activeUserId?: string;
+  activeUserId!: string;
 
   get selectedUser(): User {
     return this.listUsers.find((user) => user.id === this.activeUserId) as User;
@@ -18,8 +18,5 @@ export class AppComponent {
 
   onSelectUser(id: string) {
     this.activeUserId = id;
-  }
-  constructor() {
-    console.log(data);
   }
 }

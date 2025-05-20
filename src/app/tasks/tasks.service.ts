@@ -10,7 +10,6 @@ export class TasksService {
     if (data) {
       this.tasks = JSON.parse(data);
     }
-    console.log(this.tasks);
   }
 
   getTasksByUserId(userId: string) {
