@@ -5,11 +5,19 @@
   <ul class="flex overflow-auto gap-2 md:flex-col">
     @for(user of listUsers; track user.id) {
     <li>
-      <app-user [data]="user" />
+      <app-user
+        [data]="user"
+        (select)="onSelectUser($event)"
+        [isActive]="activeUserId === user.id"
+      />
     </li>
 
     }
   </ul>
-  <app-tasks />
+  @if(activeUserId) {
+  <app-tasks [user]="selectedUser" />
+  } @else {
+  <p class="font-semibold text-[1.15rem] text-center">Please select a user</p>
+  }
   <router-outlet />
 </main>

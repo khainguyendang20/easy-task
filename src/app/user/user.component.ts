@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { data } from '../dummy-data/user.json';
 import { User } from './user.model';
 
@@ -13,9 +13,14 @@ const randomIndex = Math.floor(Math.random() * data.length);
 })
 export class UserComponent {
   @Input({ required: true }) data!: User;
-  selectedUser = data[randomIndex];
+  @Input({ required: true }) isActive!: boolean;
+  @Output() select = new EventEmitter<string>();
 
   get imgPath() {
     return '/assets/users/' + this.data.avatar;
+  }
+
+  onSelectUser() {
+    this.select.emit(this.data.id);
   }
 }

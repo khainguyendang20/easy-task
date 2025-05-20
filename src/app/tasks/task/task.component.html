@@ -9,12 +9,12 @@
       nisl eget ultricies ultrices, nunc erat.
     </p>
     <div class="ml-auto w-fit">
-      <app-button
-        [className]="
-          'text-[#decdf2] shadow-[0_1px_3px_rgba(0,_0,_0,_0.3)] transition-all px-6 py-2 bg-[#380774] hover:bg-[#4a0774] active:bg-[#4a0774] hover:shadow-[0_1px_6px_rgba(0,_0,_0,_0.3)] active:shadow-[0_1px_6px_rgba(0,_0,_0,_0.3)] rounded-md'
-        "
-        >Complete</app-button
+      <button
+        (click)="onCompleteTask()"
+        class="button text-[#decdf2] shadow-[0_1px_3px_rgba(0,_0,_0,_0.3)] transition-all px-6 py-2 bg-[#380774] hover:bg-[#4a0774] active:bg-[#4a0774] hover:shadow-[0_1px_6px_rgba(0,_0,_0,_0.3)] active:shadow-[0_1px_6px_rgba(0,_0,_0,_0.3)] rounded-md"
       >
+        Complete
+      </button>
     </div>
   </article>
 </section>

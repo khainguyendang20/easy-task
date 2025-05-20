@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
-import { ButtonComponent } from '../../shared/components/button/button.component';
+import { Component, inject, Input } from '@angular/core';
+import { Task } from './task.model';
+import { TasksService } from '../tasks.service';
 
 @Component({
   selector: 'app-task',
   standalone: true,
-  imports: [ButtonComponent],
   templateUrl: './task.component.html',
   styles: ``,
 })
-export class TaskComponent {}
+export class TaskComponent {
+  @Input({ required: true }) task!: Task;
+  private tasksService = inject(TasksService);
+
+  onCompleteTask() {
+    this.tasksService.completeTask(this.task.id);
+  }
+}
