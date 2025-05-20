@@ -63,7 +63,8 @@ For more information on using the Angular CLI, including detailed command refere
 ## Init tasks data
 
 1. Open console tab in dev tools
-2. Run ```localStorage.setItem('tasks', JSON.stringify([
+2. Run ```js
+   localStorage.setItem('tasks', JSON.stringify([
   {
     id: "t1",
     userId: "u1",
