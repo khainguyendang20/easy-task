@@ -6,8 +6,7 @@ const randomIndex = Math.floor(Math.random() * data.length);
 
 @Component({
   selector: 'app-user',
-  standalone: true,
-  imports: [],
+  standalone: false,
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css'],
 })

@@ -2,11 +2,10 @@
   class="rounded-md shadow-[0_1px_6px_rgba(0,_0,_0,_0.1)] overflow-hidden"
 >
   <article class="p-4 text-[#25113d] bg-[#bf9ee5]">
-    <h2>Task Title</h2>
-    <time class="text-[#3c2c50]">2023-05-01</time>
+    <h2>{{ task.title }}</h2>
+    <time class="text-[#3c2c50]">{{ task.dueDate | date : "dd/MM/yyyy" }}</time>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod,
-      nisl eget ultricies ultrices, nunc erat.
+      {{ task.summary }}
     </p>
     <div class="ml-auto w-fit">
       <button
